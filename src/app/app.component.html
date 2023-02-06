@@ -1,2 +1,37 @@
-<h1>Hello man ! </h1>
-<h2>{{nanna}}</h2>
+<div class="container-fluid">
+
+  <button class="btn btn-danger" (click)="previousClick()"> prev</button>
+  <button class="btn btn-warning " (click)="nextClick()"> next</button>
+
+  <div class="card  m4 p4">
+    <img [src]="product.image" alt="" class="w-20 h-30" style="height: 400px; width: 400px;">
+    <div class="card-header  bg-black text-center w-40">
+      <h2 style="font-weight: bolder; font-family: monospace; color: tomato; 
+        padding: 5px; ">
+        {{product.title}}
+      </h2>
+      <button class="btn btn-warning m-4 p-3" (click)="toggleDetails()">
+        <span class="bi bi-eye-fill "
+          style="font-weight: bold; letter-spacing: 4px; font-size: 20px;">{{buttontext}}</span>
+      </button>
+      <div *ngIf="true then toggletemplate">
+
+      </div>
+      <hr>
+      <h4 class="text-white ">{{product.description}}</h4>
+      <ng-template #priceTemplate>
+        <h2 class="text-white">PRICE : {{product.price}}</h2>
+
+      </ng-template>
+
+      <<ng-template #ratingtemplate>
+        <h3 style="color: white; ">RATING : {{product.rating.rate}}</h3>
+        </ng-template>
+
+
+    </div>
+
+  </div>
+
+
+</div>
