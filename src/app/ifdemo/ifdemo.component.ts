@@ -7,12 +7,21 @@ import { Component, OnInit } from '@angular/core';
 })
 export class IfdemoComponent implements OnInit {
   users: any = {};
+  product: any = {};
   constructor() {}
 
+  getData(id: number) {
+    fetch(`http://fakestoreapi.com/products/${id}`)
+      .then((response) => response.json())
+      .then((data) => (this.product = data));
+  }
+  templateToDisplay: string = 'basic';
+
+  changTemplate(e: any) {
+    this.templateToDisplay = e.target.name;
+  }
+
   ngOnInit(): void {
-    fetch('https://randomuser.me/api/')
-      // .then((response) => response.json)
-      .then((data) => console.log(data))
-      .then((data) => (this.users = data));
+    this.getData(4);
   }
 }

@@ -12,12 +12,12 @@ export class AppComponent {
 
   constructor(@Inject(DOCUMENT) private document: Document) {}
   toggletemplate: TemplateRef<any> | null = null;
-
   count: number = 1;
   @ViewChild('priceTemplate', { static: true })
   pricetemplate: TemplateRef<any> | null = null;
   @ViewChild('ratingtemplate', { static: true })
   raingtemplate: TemplateRef<any> | null = null;
+
   getData(id: number) {
     fetch(`http://fakestoreapi.com/products/${id}`).then((response) =>
       response.json().then(
