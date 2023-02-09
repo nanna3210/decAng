@@ -1,0 +1,8 @@
+<div class="nannaBhai">
+  <h2>parent component</h2>
+
+  <button (click)="
+  sendingdata()">send message to child </button>
+  <app-child [object]="objectToChild" (childEvent)="dataFromChild($event)" [message]="messageTOdisplay "></app-child>
+
+</div>

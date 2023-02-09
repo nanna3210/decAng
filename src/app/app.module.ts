@@ -9,10 +9,12 @@ import { CommonModule } from '@angular/common';
 import { ClassBindComponent } from './class-bind/class-bind.component';
 import { EventBindComponent } from './event-bind/event-bind.component';
 import { ShoppingCartComponent } from './shopping-cart/shopping-cart.component';
+import { ParentComponent } from './parent/parent.component';
+import { ChildComponent } from './child/child.component';
 // import { BrowserModule } from '@angular/platform-browser';
 
 @NgModule({
-  declarations: [AppComponent, IfdemoComponent, ForDemoComponent, ClassBindComponent, EventBindComponent, ShoppingCartComponent],
+  declarations: [AppComponent, IfdemoComponent, ForDemoComponent, ClassBindComponent, EventBindComponent, ShoppingCartComponent, ParentComponent, ChildComponent],
   imports: [BrowserModule, AppRoutingModule, FormsModule, CommonModule],
   providers: [],
   bootstrap: [AppComponent],

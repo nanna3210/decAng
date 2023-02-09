@@ -1,0 +1,18 @@
+<div class="nannaBhai">
+    <h1>Child Component </h1>
+
+
+    {{message}}
+
+    <div style="display: flex; justify-content: space-around; ">
+        <hr>
+        NAME : {{object.name}}<br>
+
+        PRICE : {{object.price}}
+
+    </div>
+
+    <button class="btn btn-warning" (click)="sendDatatoParent()">send data to parent</button>
+
+
+</div>
