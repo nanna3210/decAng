@@ -1,6 +1,26 @@
-<div class="container">
-  <h1>nanna !</h1>
-
-  <h3>{{ nanna }}</h3>
-  <img src="{{ image.react }}" alt="" height="100" width="100" />
+<div class="container-fluid m-5">
+  <div class="row">
+    <div class="col-3">
+      <label for="" class="form-label"> select category</label>
+    </div>
+    <div class="col-9">
+      <select class="form-select">
+        <option value="" *ngFor="let item of categories">
+          {{ item | titlecase }}
+        </option>
+      </select>
+      <ul>
+        <p>
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatibus
+          minus voluptatem adipisci quasi sit facere aliquam iste accusamus
+          voluptatum quibusdam?
+        </p>
+        <li *ngFor="let item of mars">
+          <p *ngFor="let x of item.photos">
+            {{ x.camera.full_name }}
+          </p>
+        </li>
+      </ul>
+    </div>
+  </div>
 </div>

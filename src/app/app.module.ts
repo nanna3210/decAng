@@ -13,11 +13,31 @@ import { ParentComponent } from './parent/parent.component';
 import { ChildComponent } from './child/child.component';
 import { NannaDemoComponent } from './nanna-demo/nanna-demo.component';
 import { NannaDemoChildComponent } from './nanna-demo-child/nanna-demo-child.component';
+
+import { HttpClientModule } from '@angular/common/http';
+
 // import { BrowserModule } from '@angular/platform-browser';
 
 @NgModule({
-  declarations: [AppComponent, IfdemoComponent, ForDemoComponent, ClassBindComponent, EventBindComponent, ShoppingCartComponent, ParentComponent, ChildComponent, NannaDemoComponent, NannaDemoChildComponent],
-  imports: [BrowserModule, AppRoutingModule, FormsModule, CommonModule],
+  declarations: [
+    AppComponent,
+    IfdemoComponent,
+    ForDemoComponent,
+    ClassBindComponent,
+    EventBindComponent,
+    ShoppingCartComponent,
+    ParentComponent,
+    ChildComponent,
+    NannaDemoComponent,
+    NannaDemoChildComponent,
+  ],
+  imports: [
+    BrowserModule,
+    AppRoutingModule,
+    FormsModule,
+    CommonModule,
+    HttpClientModule,
+  ],
   providers: [],
   bootstrap: [AppComponent],
 })

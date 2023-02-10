@@ -28,9 +28,8 @@ export class ForDemoComponent implements OnInit {
   getmarsPhoto() {
     fetch(
       'https://api.nasa.gov/mars-photos/api/v1/rovers/curiosity/photos?sol=1000&api_key=DEMO_KEY'
-    )
-      .then((response) => response.json)
-      .then((data) => console.log(data));
+    ).then((response) => response.json);
+    // .then((data) => console.log(data));
     // .then((data) => (this.marsdata = data));
   }
   deleteClick(index: number) {
