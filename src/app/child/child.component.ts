@@ -8,18 +8,20 @@ import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 export class ChildComponent implements OnInit {
   constructor() {}
 
-  @Input() message: string = '';
-  @Input() object: any = {
-    name: '',
-    price: '',
-  };
+  @Input() allcount: number = 0;
+  @Input() electronicsCount: number = 0;
+  @Input() jeweleryCount: number = 0;
+  @Input() menClothingCount: number = 0;
+  @Input() womenClothingCount: number = 0;
 
-  sendingParentmessage: string = ' hey i am from child';
-  @Output() childEvent: EventEmitter<string> = new EventEmitter();
-
-  sendDatatoParent() {
-    this.childEvent.emit(this.sendingParentmessage);
-  }
+  @Output() FilterChanged: EventEmitter<string> = new EventEmitter<string>();
 
   ngOnInit(): void {}
+
+  filterButtonClick(e: any) {
+    this.FilterChanged.emit(e.target.name);
+    console.log(e.target);
+
+    // console.log(e.target.name);
+  }
 }

@@ -6,24 +6,43 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./parent.component.scss'],
 })
 export class ParentComponent implements OnInit {
+  products: any = {};
   constructor() {}
-  messageTOdisplay: string = '';
-  objectToChild: any = {
-    name: 'nanna',
-    price: 90,
-  };
 
-  messageFromChild: string | null = null;
+  allcount: number = 0;
+  electronicsCount: number = 0;
+  jeweleryCount: number = 0;
+  menClothingCount: number = 0;
+  womenClothingCount: number = 0;
 
-  dataFromChild(e: any) {
-    this.messageFromChild = e;
+  categoryName: string = 'all';
+  getCategoryName(e: any) {
+    this.categoryName = e.target.name;
+    console.log(e.target.name);
   }
 
-  ngOnInit(): void {}
-
-  sendingdata() {
-    this.messageTOdisplay = 'hey guys how Are you oll from parent';
+  getproducts() {
+    fetch('http://fakestoreapi.com/products')
+      .then((response) => response.json())
+      .then((data) => {
+        this.products = data;
+        this.allcount = data.length;
+        this.electronicsCount = data.filter(
+          (product: any) => product.category == 'electronics'
+        ).length;
+        this.jeweleryCount = data.filter(
+          (product: any) => product.category == 'jewelery'
+        ).length;
+        this.menClothingCount = data.filter(
+          (product: any) => product.category == `men's clothing`
+        ).length;
+        this.womenClothingCount = data.filter(
+          (product: any) => product.category == `women's clothing`
+        ).length;
+      });
   }
 
-  sendClick() {}
+  ngOnInit(): void {
+    this.getproducts();
+  }
 }

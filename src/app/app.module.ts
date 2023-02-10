@@ -11,10 +11,12 @@ import { EventBindComponent } from './event-bind/event-bind.component';
 import { ShoppingCartComponent } from './shopping-cart/shopping-cart.component';
 import { ParentComponent } from './parent/parent.component';
 import { ChildComponent } from './child/child.component';
+import { NannaDemoComponent } from './nanna-demo/nanna-demo.component';
+import { NannaDemoChildComponent } from './nanna-demo-child/nanna-demo-child.component';
 // import { BrowserModule } from '@angular/platform-browser';
 
 @NgModule({
-  declarations: [AppComponent, IfdemoComponent, ForDemoComponent, ClassBindComponent, EventBindComponent, ShoppingCartComponent, ParentComponent, ChildComponent],
+  declarations: [AppComponent, IfdemoComponent, ForDemoComponent, ClassBindComponent, EventBindComponent, ShoppingCartComponent, ParentComponent, ChildComponent, NannaDemoComponent, NannaDemoChildComponent],
   imports: [BrowserModule, AppRoutingModule, FormsModule, CommonModule],
   providers: [],
   bootstrap: [AppComponent],
