@@ -15,6 +15,9 @@ import { NannaDemoComponent } from './nanna-demo/nanna-demo.component';
 import { NannaDemoChildComponent } from './nanna-demo-child/nanna-demo-child.component';
 
 import { HttpClientModule } from '@angular/common/http';
+import { TemplateFormComponent } from './template-form/template-form.component';
+import { NannaValidComponent } from './nanna-valid/nanna-valid.component';
+import { ReactiveFormsModule } from '@angular/forms';
 
 // import { BrowserModule } from '@angular/platform-browser';
 
@@ -30,6 +33,8 @@ import { HttpClientModule } from '@angular/common/http';
     ChildComponent,
     NannaDemoComponent,
     NannaDemoChildComponent,
+    TemplateFormComponent,
+    NannaValidComponent,
   ],
   imports: [
     BrowserModule,
@@ -37,6 +42,7 @@ import { HttpClientModule } from '@angular/common/http';
     FormsModule,
     CommonModule,
     HttpClientModule,
+    ReactiveFormsModule,
   ],
   providers: [],
   bootstrap: [AppComponent],
