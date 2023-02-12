@@ -9,6 +9,10 @@
     <dl>
       <dt>name</dt>
       <dd><input type="text" requiered formControlName="Name" /></dd>
+      <dd class="text-danger" *ngIf="Name.invalid">
+        <span *ngIf="Name.errors?.['required']">name required </span>
+        <span *ngIf="Name.errors?.['minlength']">min 4 chars required </span>
+      </dd>
       <dt>price</dt>
       <dd><input type="text" formControlName="price" /></dd>
       <div formGroupName="frmStock" class="bg-info p-3">
